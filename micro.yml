@@ -1,0 +1,44 @@
+version: "3"
+services:
+  app_1:
+    image: certainnathan/micro-app-1-bbk:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: replicated
+      replicas: 1
+    ports:
+      - 8000:5000
+    networks:
+      - app_net
+  app_2:
+    image: certainnathan/micro-app-2-bbk:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: replicated
+      replicas: 1
+    networks:
+      - app_net
+  app_3:
+    image: certainnathan/micro-app-3-bbk:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: replicated
+      replicas: 1
+    networks:
+      - app_net
+  app_4:
+    image: certainnathan/micro-app-4-bbk:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: replicated
+      replicas: 1
+    networks:
+      - app_net
+networks:
+  app_net:
+    driver: overlay
+
