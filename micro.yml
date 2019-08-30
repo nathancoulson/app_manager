@@ -1,12 +1,5 @@
 version: "3.7"
 services:
-  nginx_reverse:
-    hostname: nginx_reverse
-    image: nginx
-    ports:
-      - 80:8000
-    volumes:
-      - ./config:/etc/nginx
   app_1:
     image: certainnathan/micro-app-1-bbk:latest
     deploy:
